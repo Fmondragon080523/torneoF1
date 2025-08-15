@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 220 25% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 84% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 25% 10%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 84% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 15%;
+    --input: 220 25% 15%;
+    --ring: 0 84% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 84% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 25% 15%;
+    --sidebar-ring: 0 84% 58%;
+
+    /* F1-inspired colors */
+    --f1-red: 0 84% 58%;
+    --f1-red-dark: 0 84% 45%;
+    --f1-red-light: 0 84% 70%;
+    --f1-dark: 220 25% 5%;
+    --f1-dark-light: 220 25% 8%;
+    --f1-dark-border: 220 25% 15%;
+    --f1-white: 0 0% 100%;
+    --f1-white-muted: 0 0% 90%;
+    --f1-gold: 45 100% 60%;
+    --f1-silver: 0 0% 75%;
+    --f1-bronze: 30 45% 55%;
+  }
+
+  .dark {
+    --background: 220 25% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 25% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 25% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 84% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 25% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 25% 8%;
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 0 84% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 12%;
+    --input: 220 25% 12%;
+    --ring: 0 84% 65%;
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 84% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 25% 12%;
+    --sidebar-ring: 0 84% 65%;
+
+    /* F1-inspired colors - darker theme */
+    --f1-red: 0 84% 65%;
+    --f1-red-dark: 0 84% 50%;
+    --f1-red-light: 0 84% 75%;
+    --f1-dark: 220 25% 3%;
+    --f1-dark-light: 220 25% 6%;
+    --f1-dark-border: 220 25% 12%;
+    --f1-white: 0 0% 100%;
+    --f1-white-muted: 0 0% 85%;
+    --f1-gold: 45 100% 65%;
+    --f1-silver: 0 0% 80%;
+    --f1-bronze: 30 45% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-racing;
+  }
+
+  /* F1-inspired utility classes */
+  .f1-grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .f1-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--f1-red)) 0%,
+      hsl(var(--f1-red-dark)) 100%
+    );
+  }
+
+  .f1-text-shadow {
+    text-shadow:
+      0 0 10px hsl(var(--f1-red)),
+      0 0 20px hsl(var(--f1-red)),
+      0 0 30px hsl(var(--f1-red));
+  }
+
+  .f1-border-glow {
+    border: 1px solid hsl(var(--f1-red));
+    box-shadow:
+      0 0 10px hsl(var(--f1-red)) / 20,
+      inset 0 0 10px hsl(var(--f1-red)) / 10;
+  }
+
+  /* Racing-style countdown */
+  .countdown-digit {
+    font-family: "Orbitron", monospace;
+    font-weight: 700;
+    text-shadow: 0 0 20px hsl(var(--f1-red));
+  }
+}
